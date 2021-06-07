@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/svg/logos/logo-short.svg';
 
 interface NavBarProps {}
 
@@ -31,21 +30,22 @@ const NavBar: React.FC<NavBarProps> = () => {
     },
   ];
   return (
-    <div className='splitted-content-mini navbar-dark h-100 py-2'>
+    <>  
       <a
-        className='navbar-brand d-flex justify-content-center mb-3'
+        className='logo'
         href='#'
         aria-label='Front'
       >
-        <img className='navbar-brand-logo-short' src={logo} alt='Logo' />
+       Logo
       </a>
 
-      <ul className='nav nav-compact-icon nav-compact-icon-circle'>
+      <ul className='menu-list'>
         {Navigation.map((item, index) => {
           return (
-            <li className='nav-item' key={index} onClick={item.action}>
-              <a className={`nav-icon ${item.active ? 'active' : ''}`}>
+            <li className={`${item.active ? 'active' : ''}`} key={index} onClick={item.action}>
+              <a >
                 <i className={`tio-${item.icon}-outlined`}></i>
+                <span>{item.title}</span>
               </a>
             </li>
           );
@@ -57,7 +57,7 @@ const NavBar: React.FC<NavBarProps> = () => {
           {/* @@include("../layouts-components/dropdown-user-splitted-content-down-left.html") */}
         </li>
       </ul>
-    </div>
+    </>
   );
 };
 

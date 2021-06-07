@@ -4,69 +4,70 @@ interface SelectionProps {}
 
 const Selection: React.FC<SelectionProps> = () => {
   return (
-    <div>
-      <ul className='navbar-nav navbar-nav-lg nav-tabs navbar-vertical-without-icons pt-2'>
-        {/* <!-- Pages --> */}
-        <li className='nav-item'>
-          <small className='nav-subtitle text-truncate' title='Pages'>
-            Data Sources
-          </small>
-        </li>
-        <li className='navbar-vertical-aside-has-menu show'>
-          <a
-            className='js-navbar-vertical-aside-menu-link nav-link nav-link-toggle active'
-            href='#'
-          >
-            <span
-              className='navbar-vertical-aside-mini-mode-hidden-elements text-truncate'
-              title='Pages'
-            >
-              Amplitude
-            </span>
-          </a>
-
-          <ul className='js-navbar-vertical-aside-submenu nav nav-sub'>
-            <li className='navbar-vertical-aside-has-menu show'>
-              <a
-                className='js-navbar-vertical-aside-menu-link nav-link nav-link-toggle'
-                href='#'
-              >
-                <span className='tio-circle nav-indicator-icon'></span>
-                <span className='text-truncate' title='Users'>
-                  Properties
-                </span>
-              </a>
-
-              <ul className='js-navbar-vertical-aside-submenu nav nav-sub'>
-                <li className='nav-item'>
-                  <a className='nav-link active' href='@@autopath/users.html'>
-                    <span className='tio-circle-outlined nav-indicator-icon'></span>
-                    <span className='text-truncate' title='Overview'>
-                      Country
-                    </span>
-                  </a>
-                </li>
-                <li className='nav-item'>
-                  <a
-                    className="nav-link @@if(link=='users-add-user.html'){active}"
-                    href='@@autopath/users-add-user.html'
-                  >
-                    <span className='tio-circle-outlined nav-indicator-icon'></span>
-                    <span className='text-truncate' title='Add User'>
-                      Email Id{' '}
-                      <span className='badge badge-warning badge-pill ml-1'>
-                        Hot
-                      </span>
-                    </span>
-                  </a>
-                </li>
-              </ul>
+    <div className="selection-container">
+      <h2>Data Sources</h2>
+      <ul className="dl-list">
+        <li className="active">
+          <div className="main-data">
+          <a>Amplitude</a>
+          <span>Add</span>
+          </div>
+          <ul className="sub-dl-list">
+            <li>
+              <a>Events</a>
+            </li>
+            <li><a>Properties</a>
+            <ul className="sub-dl-list">
+                  <li><a>Country</a></li>
+                  <li><a>Email id</a></li>
+                  <li><a>Number</a></li>
+                  <li><a>Acq Source</a></li>
+                </ul>
             </li>
           </ul>
         </li>
-        {/* <!-- End Pages --> */}
+        <li>
+        <div className="main-data">
+          <a>Stripe</a>
+          <span>add</span>
+          </div>
+          <ul className="sub-dl-list">
+            <li><a>Events</a></li>
+            <li><a>Properties</a></li>
+          </ul>
+        </li>
+        <li>
+        <div className="main-data">
+          <a>Hubspot</a>
+          <span>add</span>
+          </div>
+          <ul className="sub-dl-list">
+            <li><a>Events</a></li>
+            <li><a>Properties</a></li>
+          </ul>
+        </li>
+        <li>
+        <div className="main-data">
+          <a>ZoomInfo</a>
+          <span>add</span>
+          </div>
+          <ul className="sub-dl-list">
+            <li><a>Events</a></li>
+            <li><a>Properties</a></li>
+          </ul>
+        </li>
+        <li>
+        <div className="main-data">
+          <a>Freshsales</a>
+        <span>add</span>
+        </div>
+        <ul className="sub-dl-list">
+            <li><a>Events</a></li>
+            <li><a>Properties</a></li>
+          </ul>
+        </li>
       </ul>
-    </div>
+     </div>
   );
 };
 
